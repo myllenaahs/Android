@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("Android-AsyncTask", "Clique no botão de Login");
+                Log.i("ExampleLogin", "Clique no botão de Login");
 
                 EditText nomeEditText = (EditText) findViewById(R.id.nomeEditText);
                 String nome = nomeEditText.getText().toString();

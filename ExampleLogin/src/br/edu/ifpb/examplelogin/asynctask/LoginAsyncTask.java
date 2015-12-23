@@ -16,9 +16,6 @@ import java.net.MalformedURLException;
 import br.edu.ifpb.examplelogin.util.ServicoHttp;
 import br.edu.ifpb.examplelogin.util.Resposta;
 
-/**
- * Created by Rhavy on 01/12/2015.
- */
 public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
 
     Context context;
@@ -31,14 +28,14 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
     @Override
     protected void onPreExecute() {
 
-        Log.i("Android-AsyncTask", "OnPreExecute");
+        Log.i("ExampleLogin", "OnPreExecute");
     }
 
     @Override
     protected Resposta doInBackground(String... valores) {
 
-        Log.i("Android-AsyncTask", "doInBackground " + "Nome: "+ valores[0]);
-        Log.i("Android-AsyncTask", "doInBackground " + "Senha: "+ valores[1]);
+        Log.i("ExampleLogin", "doInBackground " + "Nome: "+ valores[0]);
+        Log.i("ExampleLogin", "doInBackground " + "Senha: "+ valores[1]);
 
         Resposta response = null;
         HttpURLConnection connection = null;
@@ -54,11 +51,11 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
 
         } catch (MalformedURLException ex) {
 
-            Log.e("Android-AsyncTask","MalformedURLException: " + ex);
+            Log.e("ExampleLogin","MalformedURLException: " + ex);
 
         } catch (IOException ex) {
 
-            Log.e("Android-AsyncTask","IOException: " + ex);
+            Log.e("ExampleLogin","IOException: " + ex);
 
         } finally {
 
@@ -80,15 +77,15 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
                 JSONObject json = new JSONObject(response.getContentValue());
 
                 String nome = json.getString("nome");
-                Log.i("Android-AsyncTask", "Nome: " + nome);
+                Log.i("ExampleLogin", "Nome: " + nome);
                 String senha = json.getString("senha");
-                Log.i("Android-AsyncTask", "Senha: " + senha);
+                Log.i("ExampleLogin", "Senha: " + senha);
                 Toast.makeText(context, nome, Toast.LENGTH_LONG).show();
             }
 
         } catch (JSONException e) {
 
-            Log.e("Android-AsyncTask", "JSONException: " + e);
+            Log.e("ExampleLogin", "JSONException: " + e);
         }
     }
 }

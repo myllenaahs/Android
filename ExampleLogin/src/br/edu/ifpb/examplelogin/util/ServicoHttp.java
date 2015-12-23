@@ -55,7 +55,7 @@ public class ServicoHttp {
 
         } catch (IOException e) {
 
-            Log.e("Android-AsyncTask", "IOException: " + e);
+            Log.e("ExampleLogin", "IOException: " + e);
         }
 
         return builder.toString();
