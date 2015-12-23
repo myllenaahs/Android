@@ -47,10 +47,10 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Response>{
 
             connection = HttpService.sendPostRequest("servicoservlet");
 
-            int statusCodeHttp = connection.getResponseCode();
+            int status = connection.getResponseCode();
             String contentValue = HttpService.postHttpContent(connection);
 
-            response = new Response(statusCodeHttp, contentValue);
+            response = new Response(status, contentValue);
 
         } catch (MalformedURLException ex) {
 

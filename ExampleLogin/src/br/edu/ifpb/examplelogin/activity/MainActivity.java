@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         Button enviar = (Button)findViewById(R.id.enviarButton);
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Log.i("Android-AsyncTask", "Clique no botão de Login");
 
                 EditText nomeEditText = (EditText) findViewById(R.id.nomeEditText);
@@ -29,10 +29,10 @@ public class MainActivity extends Activity {
                 EditText senhaEditText = (EditText) findViewById(R.id.senhaEditText);
                 String senha = senhaEditText.getText().toString();
 
-                LoginAsyncTask loginAsyncTask = new LoginAsyncTask(v.getContext());
-                String[] valores = {nome, senha};
+                LoginAsyncTask loginAsyncTask = new LoginAsyncTask(view.getContext());
+                String[] val = {nome, senha};
 
-                loginAsyncTask.execute(valores);
+                loginAsyncTask.execute(val);
             }
         });
     }
