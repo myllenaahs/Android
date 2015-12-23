@@ -16,11 +16,11 @@ import java.net.MalformedURLException;
 import br.edu.ifpb.examplelogin.util.ServicoHttp;
 import br.edu.ifpb.examplelogin.util.Resposta;
 
-public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
+public class Login extends AsyncTask<String, Void, Resposta>{
 
     Context context;
 
-    public LoginAsyncTask(Context activity) {
+    public Login(Context activity) {
 
         this.context = activity;
     }

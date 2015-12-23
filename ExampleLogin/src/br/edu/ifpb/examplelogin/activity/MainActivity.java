@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import br.edu.ifpb.examplelogin.R;
-import br.edu.ifpb.examplelogin.asynctask.LoginAsyncTask;
+import br.edu.ifpb.examplelogin.asynctask.Login;
 
 public class MainActivity extends Activity {
 
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
                 EditText senhaEditText = (EditText) findViewById(R.id.senhaEditText);
                 String senha = senhaEditText.getText().toString();
 
-                LoginAsyncTask loginAsyncTask = new LoginAsyncTask(view.getContext());
+                Login loginAsyncTask = new Login(view.getContext());
                 String[] val = {nome, senha};
 
                 loginAsyncTask.execute(val);
