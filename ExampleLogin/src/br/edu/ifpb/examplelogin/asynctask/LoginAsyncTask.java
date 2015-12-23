@@ -13,13 +13,13 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 
-import br.edu.ifpb.examplelogin.util.HttpService;
-import br.edu.ifpb.examplelogin.util.Response;
+import br.edu.ifpb.examplelogin.util.ServicoHttp;
+import br.edu.ifpb.examplelogin.util.Resposta;
 
 /**
  * Created by Rhavy on 01/12/2015.
  */
-public class LoginAsyncTask extends AsyncTask<String, Void, Response>{
+public class LoginAsyncTask extends AsyncTask<String, Void, Resposta>{
 
     Context context;
 
@@ -35,22 +35,22 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Response>{
     }
 
     @Override
-    protected Response doInBackground(String... valores) {
+    protected Resposta doInBackground(String... valores) {
 
         Log.i("Android-AsyncTask", "doInBackground " + "Nome: "+ valores[0]);
         Log.i("Android-AsyncTask", "doInBackground " + "Senha: "+ valores[1]);
 
-        Response response = null;
+        Resposta response = null;
         HttpURLConnection connection = null;
 
         try {
 
-            connection = HttpService.sendPostRequest("servicoservlet");
+            connection = ServicoHttp.sendPostRequest("servicoservlet");
 
             int status = connection.getResponseCode();
-            String contentValue = HttpService.postHttpContent(connection);
+            String contentValue = ServicoHttp.postHttpContent(connection);
 
-            response = new Response(status, contentValue);
+            response = new Resposta(status, contentValue);
 
         } catch (MalformedURLException ex) {
 
@@ -69,7 +69,7 @@ public class LoginAsyncTask extends AsyncTask<String, Void, Response>{
     }
 
     @Override
-    protected void onPostExecute(Response response) {
+    protected void onPostExecute(Resposta response) {
 
         try {
 

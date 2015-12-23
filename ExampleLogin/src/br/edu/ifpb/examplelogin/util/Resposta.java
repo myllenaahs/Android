@@ -1,12 +1,12 @@
 package br.edu.ifpb.examplelogin.util;
 
-public class Response {
+public class Resposta {
 
     private int statusCodeHttp;
 
     private String contentValue;
 
-    public Response(int statusCodeHttp, String contentValue) {
+    public Resposta(int statusCodeHttp, String contentValue) {
         this.statusCodeHttp = statusCodeHttp;
         this.contentValue = contentValue;
     }

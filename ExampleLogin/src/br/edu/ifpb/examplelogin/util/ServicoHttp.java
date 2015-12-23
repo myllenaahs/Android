@@ -12,7 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class HttpService {
+public class ServicoHttp {
 
     // IP da máquina onde se encontra o servidor.
     private static final String URL_CONTEXT = "http://192.168.0.104:8080/rest-servlet-service/";
