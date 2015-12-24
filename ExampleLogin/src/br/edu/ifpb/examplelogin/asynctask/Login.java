@@ -48,6 +48,8 @@ public class Login extends AsyncTask<String, Void, Resposta>{
             String contentValue = ServicoHttp.postHttpContent(connection);
 
             response = new Resposta(status, contentValue);
+            
+            
 
         } catch (MalformedURLException ex) {
 
