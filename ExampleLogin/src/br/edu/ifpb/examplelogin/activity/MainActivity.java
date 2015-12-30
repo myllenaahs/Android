@@ -1,6 +1,7 @@
 package br.edu.ifpb.examplelogin.activity;
 
-import android.R;
+import com.example.examplelogin.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
