@@ -12,28 +12,27 @@ import br.edu.ifpb.examplelogin.asynctask.Login;
 
 public class MainActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-        Button enviar = (Button)findViewById(R.id.enviarButton);
-        enviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("ExampleLogin", "Clique no botão de Login");
+		Button send = (Button) findViewById(R.id.enviarButton);
+		send.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
 
-                EditText nomeEditText = (EditText) findViewById(R.id.nomeEditText);
-                String nome = nomeEditText.getText().toString();
-                
-                EditText senhaEditText = (EditText) findViewById(R.id.senhaEditText);
-                String senha = senhaEditText.getText().toString();
+				EditText nomeEditText = (EditText) findViewById(R.id.nomeEditText);
+				String nome = nomeEditText.getText().toString();
 
-                Login loginAsyncTask = new Login(view.getContext());
-                String[] val = {nome, senha};
+				EditText senhaEditText = (EditText) findViewById(R.id.senhaEditText);
+				String senha = senhaEditText.getText().toString();
 
-                loginAsyncTask.execute(val);
-            }
-        });
-    }
+				Login loginAsyncTask = new Login(view.getContext());
+				String[] val = { nome, senha };
+
+				loginAsyncTask.execute(val);
+			}
+		});
+	}
 }

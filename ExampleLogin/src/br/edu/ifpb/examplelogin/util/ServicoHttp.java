@@ -31,10 +31,6 @@ public class ServicoHttp {
         return connection;
     }
 
-    public void sendJsonPostRequest(String service, JSONObject json) {
-        //TODO: Implementar conexão com o Servidor REST.
-    }
-
     public static String postHttpContent(HttpURLConnection connection) {
 
         StringBuilder builder = new StringBuilder();
