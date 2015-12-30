@@ -1,14 +1,14 @@
 package br.edu.ifpb.examplelogin.activity;
 
+import android.R;
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import br.edu.ifpb.examplelogin.R;
+import android.widget.Toast;
 import br.edu.ifpb.examplelogin.asynctask.Login;
+
 
 public class MainActivity extends Activity {
 
@@ -30,8 +30,10 @@ public class MainActivity extends Activity {
 
 				Login loginAsyncTask = new Login(view.getContext());
 				String[] val = { nome, senha };
-
+				
 				loginAsyncTask.execute(val);
+				
+				Toast.makeText(getBaseContext(), "Login realizado com sucesso", Toast.LENGTH_SHORT).show();
 			}
 		});
 	}
